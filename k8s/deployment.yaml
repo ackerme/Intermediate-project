@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: intermediate-project
+  labels:
+    app: intermediate-project
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: intermediate-project
+  template:
+    metadata:
+      labels:
+        app: intermediate-project
+    spec:
+      containers:
+        - name: intermediate-project
+          image: yisraelackerman/intermediate-project:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_VERSION
+              value: "v1.0.0"
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "200m"
+              memory: "128Mi"
