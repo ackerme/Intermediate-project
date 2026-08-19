@@ -1,9 +1,9 @@
-from flask import Flask
+from flask import Flask   # מיועד לשרת וואב
 import os
 
 app = Flask(__name__)
 
-VERSION = os.environ.get("APP_VERSION", "v1.0.0")
+VERSION = os.environ.get("APP_VERSION", "v1.0.1")
 
 @app.route("/")
 def home():
