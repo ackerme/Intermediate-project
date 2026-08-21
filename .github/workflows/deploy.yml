@@ -46,3 +46,9 @@ jobs:
           git add k8s/deployment.yaml
           git commit -m "ci: bump image to ${{ steps.vars.outputs.TAG }}" || echo "No changes to commit"
           git push
+    # מתחיל לפעול מתי שעושים פוש לnain 
+    # ורק שינויים בקבצי האפליקציה
+    # התחברות לדוקראב 
+    # uses: docker/login-action@v3 מזהה הכניסה הרשמי של אקשנס
+    # נכנס אם הסיקרט שיצרנו
+    # 
