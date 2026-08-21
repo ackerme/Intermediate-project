@@ -1,3 +1,5 @@
 flask==3.0.3
 mysql-connector-python==9.0.0
 prometheus-client==0.20.0
+# במקום לעלות את כל הספריות שאין כבידות אומרים לו מה אנחנו רוצים
+# pip install -r requirements.txt
