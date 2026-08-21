@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: intermediate-project
-          image: yisraelackerman/intermediate-project:latest
+          image: yisraelackerman/intermediate-project:e0ad69c
           ports:
             - containerPort: 5000
           env:
