@@ -13,15 +13,36 @@ spec:
     metadata:
       labels:
         app: intermediate-project
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "5000"
+        prometheus.io/path: "/metrics"
     spec:
       containers:
         - name: intermediate-project
-          image: yisraelackerman/intermediate-project:07e9f8a
+          image: yisraelackerman/intermediate-project:latest
           ports:
             - containerPort: 5000
           env:
             - name: APP_VERSION
               value: "v1.0.0"
+            - name: MYSQL_HOST
+              value: "mysql"
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_USER
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_PASSWORD
+            - name: MYSQL_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_DATABASE
           resources:
             requests:
               cpu: "50m"
