@@ -1,5 +1,10 @@
 flask==3.0.3
 mysql-connector-python==9.0.0
 prometheus-client==0.20.0
+<<<<<<< HEAD
 PyJWT==2.9.0
 werkzeug==3.0.4
+=======
+# במקום לעלות את כל הספריות שאין כבידות אומרים לו מה אנחנו רוצים
+# pip install -r requirements.txt
+>>>>>>> 216ad145e5e2c02d0c9df5adf5a7886dd3f3854b
