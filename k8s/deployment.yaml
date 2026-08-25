@@ -20,12 +20,12 @@ spec:
     spec:
       containers:
         - name: intermediate-project
-          image: yisraelackerman/intermediate-project:1b8c914
+          image: yisraelackerman/intermediate-project:latest
           ports:
             - containerPort: 5000
           env:
             - name: APP_VERSION
-              value: "v1.0.0"
+              value: "v2.0.0"
             - name: MYSQL_HOST
               value: "mysql"
             - name: MYSQL_USER
@@ -43,6 +43,11 @@ spec:
                 secretKeyRef:
                   name: mysql-secret
                   key: MYSQL_DATABASE
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: JWT_SECRET
           resources:
             requests:
               cpu: "50m"
